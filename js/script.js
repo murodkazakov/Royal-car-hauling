@@ -3,35 +3,38 @@ document.addEventListener("DOMContentLoaded", function () {
   const fromCity = document.getElementById("fromCity");
   const fromState = document.getElementById("fromState");
 
-  async function fillCityState(zipInput, cityInput, stateInput) {
-    const zip = zipInput.value.trim();
+  async function fillCityState() {
+    const zip = fromZip.value.trim();
 
-    if (zip.length !== 5 || !/^\d{5}$/.test(zip)) {
-      cityInput.value = "";
-      stateInput.value = "";
+    if (!/^\d{5}$/.test(zip)) {
+      fromCity.value = "";
+      fromState.value = "";
       return;
     }
 
     try {
-      const response = await fetch(`https://api.zippopotam.us/us/${zip}`);
-
-      if (!response.ok) {
-        cityInput.value = "";
-        stateInput.value = "";
-        return;
-      }
-
+      const response = await fetch("https://api.zippopotam.us/us/" + zip);
       const data = await response.json();
 
-      cityInput.value = data.places[0]["place name"];
-      stateInput.value = data.places[0]["state abbreviation"];
+      if (data.places && data.places.length > 0) {
+        fromCity.value = data.places[0]["place name"] || "";
+        fromState.value = data.places[0]["state abbreviation"] || "";
+      } else {
+        fromCity.value = "";
+        fromState.value = "";
+      }
     } catch (error) {
-      cityInput.value = "";
-      stateInput.value = "";
+      fromCity.value = "";
+      fromState.value = "";
+      console.log(error);
     }
   }
 
-  fromZip.addEventListener("blur", function () {
-    fillCityState(fromZip, fromCity, fromState);
-  });
+  if (fromZip) {
+    fromZip.addEventListener("input", function () {
+      if (fromZip.value.trim().length === 5) {
+        fillCityState();
+      }
+    });
+  }
 });
