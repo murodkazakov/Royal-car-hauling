@@ -8,162 +8,102 @@
 </head>
 <body>
 
+  <!-- TOP BAR -->
   <div class="top-bar">
-    <div class="container top-bar-content">
-      <a href="tel:4452853303" class="top-link">Call Now: 445-285-3303</a>
-      <a href="mailto:info@royalcarhauling.com" class="top-link">info@royalcarhauling.com</a>
+    <div class="container top-bar-inner">
+      <div class="left">📞 445-285-3303</div>
+      <div class="right">✉️ info@royalcarhauling.com</div>
     </div>
   </div>
 
+  <!-- HEADER -->
   <header class="header">
     <div class="container nav">
-      <a href="#" class="logo">
-        <img src="images/logo.png" alt="Royal Car Hauling Logo">
-      </a>
+      <div class="logo">
+        <img src="images/logo.png">
+      </div>
 
       <nav class="menu">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#why-us">Why Us</a>
-        <a href="#quote">Quote</a>
-        <a href="#contact">Contact</a>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Why Us</a>
+        <a href="#">Quote</a>
+        <a href="#">Contact</a>
       </nav>
 
       <a href="tel:4452853303" class="call-btn">Call Us</a>
     </div>
   </header>
 
-  <section class="hero" id="home">
-    <div class="hero-overlay"></div>
-
+  <!-- HERO -->
+  <section class="hero">
     <div class="container hero-content">
+
       <div class="hero-text">
-        <p class="hero-tag">Reliable Auto Transport Across the U.S.</p>
+        <p class="tag">RELIABLE AUTO TRANSPORT ACROSS THE U.S.</p>
         <h1>Professional Car Hauling You Can Trust</h1>
-        <p class="hero-description">
-          Royal Car Hauling provides dependable vehicle transportation with fast
-          communication, secure handling, and competitive pricing for every shipment.
+        <p class="desc">
+          Royal Car Hauling provides dependable vehicle transportation with fast communication, secure handling, and competitive pricing.
         </p>
 
         <div class="hero-buttons">
-          <a href="#quote" class="primary-btn">Get a Quote</a>
-          <a href="tel:4452853303" class="secondary-btn">Call 445-285-3303</a>
+          <a href="#" class="btn-primary">Get a Quote</a>
+          <a href="tel:4452853303" class="btn-outline">Call 445-285-3303</a>
         </div>
       </div>
 
-      <div class="quote-box" id="quote">
+      <!-- FORM -->
+      <div class="quote-box">
         <h2>Request a Quote</h2>
 
         <form class="quote-form">
-          <div class="form-group">
-            <label for="from">Transport From</label>
-            <input type="text" id="from" placeholder="Pickup ZIP">
+
+          <label>Pickup ZIP</label>
+          <input id="from" type="text" placeholder="Enter ZIP">
+
+          <div class="row">
+            <input id="fromCity" placeholder="City" readonly>
+            <input id="fromState" placeholder="State" readonly>
           </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="fromCity">Pickup City</label>
-              <input type="text" id="fromCity" placeholder="City" readonly>
-            </div>
+          <label>Delivery ZIP</label>
+          <input id="to" type="text" placeholder="Enter ZIP">
 
-            <div class="form-group">
-              <label for="fromState">State</label>
-              <input type="text" id="fromState" placeholder="State" readonly>
-            </div>
+          <div class="row">
+            <input id="toCity" placeholder="City" readonly>
+            <input id="toState" placeholder="State" readonly>
           </div>
 
-          <div class="form-group">
-            <label for="to">Transport To</label>
-            <input type="text" id="to" placeholder="Delivery ZIP">
+          <div class="row">
+            <input placeholder="Year">
+            <input placeholder="Make">
           </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="toCity">Delivery City</label>
-              <input type="text" id="toCity" placeholder="City" readonly>
-            </div>
+          <input placeholder="Model">
 
-            <div class="form-group">
-              <label for="toState">State</label>
-              <input type="text" id="toState" placeholder="State" readonly>
-            </div>
+          <div class="row">
+            <input placeholder="Full Name">
+            <input placeholder="Phone">
           </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="year">Year</label>
-              <input type="text" id="year" placeholder="2020">
-            </div>
+          <input placeholder="Email">
 
-            <div class="form-group">
-              <label for="make">Make</label>
-              <input type="text" id="make" placeholder="Toyota">
-            </div>
+          <!-- CONSENT -->
+          <div class="consent">
+            <input type="checkbox">
+            <p>
+              I agree to receive communications by text message regarding vehicle shipping from Royal Car Hauling LLC. Message & data rates may apply.
+            </p>
           </div>
 
-          <div class="form-group">
-            <label for="model">Model</label>
-            <input type="text" id="model" placeholder="Camry">
-          </div>
+          <button>Get Free Quote</button>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" placeholder="Your full name">
-            </div>
-
-            <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="text" id="phone" placeholder="Best number">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Your email address">
-          </div>
-
-          <button type="submit" class="submit-btn">Get Free Quote</button>
         </form>
       </div>
+
     </div>
   </section>
 
-  <section class="stats" id="services">
-    <div class="container stats-grid">
-      <div class="stat-card">
-        <h3>Fast Response</h3>
-        <p>Quick communication and quote support for every customer.</p>
-      </div>
-      <div class="stat-card">
-        <h3>Nationwide Service</h3>
-        <p>Vehicle transport solutions across cities and states.</p>
-      </div>
-      <div class="stat-card">
-        <h3>Safe Delivery</h3>
-        <p>Your car is handled with care from pickup to drop-off.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact-strip" id="contact">
-    <div class="container contact-strip-content">
-      <div>
-        <h3>Need help right away?</h3>
-        <p>Call us now and speak with our team.</p>
-      </div>
-      <a href="tel:4452853303" class="primary-btn">445-285-3303</a>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container footer-content">
-      <p>Royal Car Hauling</p>
-      <p>4222 Green Arbors Ln, Cincinnati, OH 45249, USA</p>
-      <p><a href="mailto:info@royalcarhauling.com">info@royalcarhauling.com</a></p>
-    </div>
-  </footer>
-
-  <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
