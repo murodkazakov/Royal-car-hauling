@@ -53,6 +53,7 @@
 
       <div class="quote-box" id="quote">
         <h2>Request a Quote</h2>
+
         <form class="quote-form">
           <div class="form-group">
             <label for="from">Transport From</label>
@@ -73,7 +74,19 @@
 
           <div class="form-group">
             <label for="to">Transport To</label>
-            <input type="text" id="to" placeholder="Delivery ZIP or City">
+            <input type="text" id="to" placeholder="Delivery ZIP">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="toCity">Delivery City</label>
+              <input type="text" id="toCity" placeholder="City" readonly>
+            </div>
+
+            <div class="form-group">
+              <label for="toState">State</label>
+              <input type="text" id="toState" placeholder="State" readonly>
+            </div>
           </div>
 
           <div class="form-row">
