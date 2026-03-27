@@ -51,13 +51,22 @@
         </div>
       </div>
 
-      <div class="quote-box" id="quote">
-        <h2>Request a Quote</h2>
-        <form class="quote-form">
-          <div class="form-group">
-            <label for="from">Transport From</label>
-            <input type="text" id="from" placeholder="Pickup ZIP or City">
-          </div>
+      <div class="form-group">
+  <label for="from">Transport From</label>
+  <input type="text" id="from" placeholder="Pickup ZIP">
+</div>
+
+<div class="form-row">
+  <div class="form-group">
+    <label for="fromCity">Pickup City</label>
+    <input type="text" id="fromCity" placeholder="City" readonly>
+  </div>
+
+  <div class="form-group">
+    <label for="fromState">State</label>
+    <input type="text" id="fromState" placeholder="State" readonly>
+  </div>
+</div>
 
           <div class="form-group">
             <label for="to">Transport To</label>
