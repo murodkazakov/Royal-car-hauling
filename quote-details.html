@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Your Quote | Royal Car Hauling</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-left-links">
+        <a href="tel:4452853303" class="top-contact">(445) 285-3303</a>
+        <a href="mailto:info@royalcarhauling.com" class="top-contact">info@royalcarhauling.com</a>
+      </div>
+      <div class="top-right-links">
+        <a href="index.html#about" class="top-link">About Us</a>
+        <a href="privacy.html" class="top-link">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Royal Car Hauling Logo">
+      </a>
+
+      <nav class="menu">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About Us</a>
+        <a href="index.html#transport-options">Services</a>
+        <a href="index.html#why-us">Why Us</a>
+        <a href="index.html#gallery">Gallery</a>
+        <a href="index.html#quote">Quote</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <a href="tel:4452853303" class="call-btn">Call (445) 285-3303</a>
+    </div>
+  </header>
+
+  <section class="quote-page-section">
+    <div class="container quote-page-wrap">
+      <div class="quote-page-card">
+        <a href="index.html#quote" class="back-link">← Back to Route Step</a>
+
+        <div class="quote-page-top">
+          <h1>Complete Your Quote</h1>
+          <p>Enter your vehicle and contact details below.</p>
+        </div>
+
+        <div class="route-preview">
+          <div class="route-preview-box">
+            <small>Pickup</small>
+            <strong id="routeFrom">Loading route...</strong>
+          </div>
+          <div class="route-preview-box">
+            <small>Delivery</small>
+            <strong id="routeTo">Loading route...</strong>
+          </div>
+        </div>
+
+        <form class="quote-form" id="quoteDetailsForm">
+          <input type="hidden" id="hiddenFromZip" name="fromZip">
+          <input type="hidden" id="hiddenToZip" name="toZip">
+          <input type="hidden" id="hiddenFromCity" name="fromCity">
+          <input type="hidden" id="hiddenFromState" name="fromState">
+          <input type="hidden" id="hiddenToCity" name="toCity">
+          <input type="hidden" id="hiddenToState" name="toState">
+          <input type="hidden" id="hiddenSmsConsent" name="smsConsent">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="year">Vehicle Year</label>
+              <input id="year" type="text" placeholder="2024">
+            </div>
+
+            <div class="form-group">
+              <label for="shipDate">First Available Date</label>
+              <input id="shipDate" type="date">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="make">Vehicle Make</label>
+              <input id="make" list="vehicle-makes" type="text" placeholder="Select or type make">
+              <datalist id="vehicle-makes">
+                <option value="Acura">
+                <option value="Audi">
+                <option value="BMW">
+                <option value="Buick">
+                <option value="Cadillac">
+                <option value="Chevrolet">
+                <option value="Chrysler">
+                <option value="Dodge">
+                <option value="Ford">
+                <option value="GMC">
+                <option value="Honda">
+                <option value="Hyundai">
+                <option value="Infiniti">
+                <option value="Jeep">
+                <option value="Kia">
+                <option value="Land Rover">
+                <option value="Lexus">
+                <option value="Mercedes-Benz">
+                <option value="Nissan">
+                <option value="Porsche">
+                <option value="Ram">
+                <option value="Subaru">
+                <option value="Tesla">
+                <option value="Toyota">
+                <option value="Volkswagen">
+                <option value="Volvo">
+              </datalist>
+            </div>
+
+            <div class="form-group">
+              <label for="model">Vehicle Model</label>
+              <input id="model" list="vehicle-models" type="text" placeholder="Select or type model">
+              <datalist id="vehicle-models">
+                <option value="Accord">
+                <option value="Altima">
+                <option value="Camaro">
+                <option value="Camry">
+                <option value="Civic">
+                <option value="Corolla">
+                <option value="Escape">
+                <option value="Explorer">
+                <option value="F-150">
+                <option value="Highlander">
+                <option value="Malibu">
+                <option value="Model 3">
+                <option value="Model S">
+                <option value="Mustang">
+                <option value="RAV4">
+                <option value="Silverado">
+                <option value="Tacoma">
+                <option value="Tahoe">
+                <option value="Wrangler">
+              </datalist>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Transport Type</label>
+              <div class="radio-group">
+                <label class="radio-pill active">
+                  <input type="radio" name="transportType" value="Open" checked>
+                  Open
+                </label>
+                <label class="radio-pill">
+                  <input type="radio" name="transportType" value="Enclosed">
+                  Enclosed
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Vehicle Condition</label>
+              <div class="radio-group">
+                <label class="radio-pill active">
+                  <input type="radio" name="runningCondition" value="Running" checked>
+                  Running
+                </label>
+                <label class="radio-pill">
+                  <input type="radio" name="runningCondition" value="Not Running">
+                  Not Running
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input id="name" type="text" placeholder="Your full name">
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input id="phone" type="text" placeholder="Best number to reach you">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input id="email" type="email" placeholder="Your email address">
+            </div>
+
+            <div class="form-group">
+              <label for="notes">Additional Notes</label>
+              <input id="notes" type="text" placeholder="Optional details">
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit Quote Request</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <p class="footer-title">Royal Car Hauling</p>
+        <p>4222 Green Arbors Ln, Cincinnati, OH 45249, USA</p>
+        <p><a href="mailto:info@royalcarhauling.com">info@royalcarhauling.com</a></p>
+        <p><a href="tel:4452853303">(445) 285-3303</a></p>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-title">Quick Links</p>
+        <p><a href="index.html#about">About Us</a></p>
+        <p><a href="index.html#transport-options">Services</a></p>
+        <p><a href="index.html#quote">Request a Quote</a></p>
+        <p><a href="index.html#contact">Contact</a></p>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-title">Legal</p>
+        <p><a href="privacy.html">Privacy Policy</a></p>
+        <p><a href="terms.html">Terms & Conditions</a></p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 Royal Car Hauling. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
