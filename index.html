@@ -63,20 +63,20 @@
         </div>
       </div>
 
-      <div class="quote-box" id="quote">
+      <div class="quote-box quote-box-compact" id="quote">
         <h2>Request a Quote</h2>
-        <p class="quote-subtext">Tell us the route and vehicle details, and our team will contact you quickly.</p>
+        <p class="quote-subtext">Start with your route and continue to step 2.</p>
 
-        <form class="quote-form">
+        <form class="quote-form quote-step-one-form" id="quoteStepOneForm">
           <div class="form-row">
             <div class="form-group">
               <label for="from">Pickup ZIP</label>
-              <input id="from" type="text" placeholder="Enter ZIP">
+              <input id="from" type="text" placeholder="Enter ZIP" maxlength="5">
             </div>
 
             <div class="form-group">
               <label for="to">Delivery ZIP</label>
-              <input id="to" type="text" placeholder="Enter ZIP">
+              <input id="to" type="text" placeholder="Enter ZIP" maxlength="5">
             </div>
           </div>
 
@@ -104,91 +104,6 @@
             </div>
           </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="year">Vehicle Year</label>
-              <input id="year" type="text" placeholder="2024">
-            </div>
-
-            <div class="form-group">
-              <label for="make">Vehicle Make</label>
-              <input id="make" list="vehicle-makes" type="text" placeholder="Select or type make">
-              <datalist id="vehicle-makes">
-                <option value="Acura">
-                <option value="Audi">
-                <option value="BMW">
-                <option value="Buick">
-                <option value="Cadillac">
-                <option value="Chevrolet">
-                <option value="Chrysler">
-                <option value="Dodge">
-                <option value="Ford">
-                <option value="GMC">
-                <option value="Honda">
-                <option value="Hyundai">
-                <option value="Infiniti">
-                <option value="Jeep">
-                <option value="Kia">
-                <option value="Land Rover">
-                <option value="Lexus">
-                <option value="Mercedes-Benz">
-                <option value="Nissan">
-                <option value="Porsche">
-                <option value="Ram">
-                <option value="Subaru">
-                <option value="Tesla">
-                <option value="Toyota">
-                <option value="Volkswagen">
-                <option value="Volvo">
-              </datalist>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="model">Vehicle Model</label>
-              <input id="model" list="vehicle-models" type="text" placeholder="Select or type model">
-              <datalist id="vehicle-models">
-                <option value="Accord">
-                <option value="Altima">
-                <option value="Camaro">
-                <option value="Camry">
-                <option value="Civic">
-                <option value="Corolla">
-                <option value="Escape">
-                <option value="Explorer">
-                <option value="F-150">
-                <option value="Highlander">
-                <option value="Malibu">
-                <option value="Model 3">
-                <option value="Model S">
-                <option value="Mustang">
-                <option value="RAV4">
-                <option value="Silverado">
-                <option value="Tacoma">
-                <option value="Tahoe">
-                <option value="Wrangler">
-              </datalist>
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input id="email" type="email" placeholder="Your email address">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input id="name" type="text" placeholder="Your full name">
-            </div>
-
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input id="phone" type="text" placeholder="Best number to reach you">
-            </div>
-          </div>
-
           <div class="consent-box">
             <label class="consent-label">
               <input type="checkbox" id="smsConsent">
@@ -196,12 +111,12 @@
                 I agree to receive communications by text message regarding vehicle shipping from Royal Car Hauling LLC.
                 You may opt-out by replying STOP or ask for more information by replying HELP.
                 Message frequency varies. Message and data rates may apply.
-                Please review our <a href="privacy.html" target="_blank">Privacy Policy</a>.
+                Please review our <a href="privacy.html">Privacy Policy</a>.
               </span>
             </label>
           </div>
 
-          <button type="submit" class="submit-btn">Get Free Quote</button>
+          <button type="submit" class="submit-btn">Continue Quote</button>
         </form>
       </div>
     </div>
@@ -410,7 +325,7 @@
 
         <div class="faq-card">
           <h3>How do I get a quote?</h3>
-          <p>Fill out the form with your ZIPs, vehicle details, and contact information.</p>
+          <p>Start with your ZIP codes, then continue to the second quote step to enter vehicle and contact details.</p>
         </div>
 
         <div class="faq-card">
