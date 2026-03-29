@@ -164,7 +164,7 @@ img {
   padding: 72px 0 84px;
   background:
     linear-gradient(135deg, rgba(255,255,255,0.86), rgba(236,243,251,0.84)),
-    url("../images/hero-bg.jpg") center center / cover no-repeat;
+    url("../images/hero-big.jpg") center center / cover no-repeat;
 }
 
 .hero-content {
