@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector(".quote-form");
-
   const fromZip = document.getElementById("from");
   const toZip = document.getElementById("to");
 
@@ -11,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const toState = document.getElementById("toState");
 
   async function fillCityState(zipInput, cityInput, stateInput) {
+    if (!zipInput || !cityInput || !stateInput) return;
+
     const zip = zipInput.value.trim();
 
     if (!/^\d{5}$/.test(zip)) {
@@ -46,30 +46,151 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (fromZip) {
     fromZip.addEventListener("input", function () {
+      fromZip.value = fromZip.value.replace(/\D/g, "").slice(0, 5);
+
       if (fromZip.value.trim().length === 5) {
         fillCityState(fromZip, fromCity, fromState);
       } else {
-        fromCity.value = "";
-        fromState.value = "";
+        if (fromCity) fromCity.value = "";
+        if (fromState) fromState.value = "";
       }
     });
   }
 
   if (toZip) {
     toZip.addEventListener("input", function () {
+      toZip.value = toZip.value.replace(/\D/g, "").slice(0, 5);
+
       if (toZip.value.trim().length === 5) {
         fillCityState(toZip, toCity, toState);
       } else {
-        toCity.value = "";
-        toState.value = "";
+        if (toCity) toCity.value = "";
+        if (toState) toState.value = "";
       }
     });
   }
 
-  if (form) {
-    form.addEventListener("submit", function (e) {
+  const stepOneForm = document.getElementById("quoteStepOneForm");
+
+  if (stepOneForm) {
+    stepOneForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      alert("Your quote form layout is ready. Next we can connect real email sending and vehicle dropdowns.");
+
+      const smsConsent = document.getElementById("smsConsent");
+
+      const data = {
+        fromZip: fromZip ? fromZip.value.trim() : "",
+        toZip: toZip ? toZip.value.trim() : "",
+        fromCity: fromCity ? fromCity.value.trim() : "",
+        fromState: fromState ? fromState.value.trim() : "",
+        toCity: toCity ? toCity.value.trim() : "",
+        toState: toState ? toState.value.trim() : "",
+        smsConsent: smsConsent ? smsConsent.checked : false
+      };
+
+      if (!data.fromZip || !data.toZip) {
+        alert("Please enter both pickup and delivery ZIP codes.");
+        return;
+      }
+
+      if (!data.fromCity || !data.toCity) {
+        alert("Please enter valid ZIP codes so we can load the city and state.");
+        return;
+      }
+
+      sessionStorage.setItem("royalQuoteStep1", JSON.stringify(data));
+      window.location.href = "quote-details.html";
+    });
+  }
+
+  const quoteDetailsForm = document.getElementById("quoteDetailsForm");
+
+  if (quoteDetailsForm) {
+    const savedData = JSON.parse(sessionStorage.getItem("royalQuoteStep1") || "{}");
+
+    const routeFrom = document.getElementById("routeFrom");
+    const routeTo = document.getElementById("routeTo");
+
+    const hiddenFromZip = document.getElementById("hiddenFromZip");
+    const hiddenToZip = document.getElementById("hiddenToZip");
+    const hiddenFromCity = document.getElementById("hiddenFromCity");
+    const hiddenFromState = document.getElementById("hiddenFromState");
+    const hiddenToCity = document.getElementById("hiddenToCity");
+    const hiddenToState = document.getElementById("hiddenToState");
+    const hiddenSmsConsent = document.getElementById("hiddenSmsConsent");
+
+    if (!savedData.fromZip || !savedData.toZip) {
+      window.location.href = "index.html#quote";
+      return;
+    }
+
+    if (routeFrom) {
+      routeFrom.textContent = `${savedData.fromCity}, ${savedData.fromState} (${savedData.fromZip})`;
+    }
+
+    if (routeTo) {
+      routeTo.textContent = `${savedData.toCity}, ${savedData.toState} (${savedData.toZip})`;
+    }
+
+    if (hiddenFromZip) hiddenFromZip.value = savedData.fromZip || "";
+    if (hiddenToZip) hiddenToZip.value = savedData.toZip || "";
+    if (hiddenFromCity) hiddenFromCity.value = savedData.fromCity || "";
+    if (hiddenFromState) hiddenFromState.value = savedData.fromState || "";
+    if (hiddenToCity) hiddenToCity.value = savedData.toCity || "";
+    if (hiddenToState) hiddenToState.value = savedData.toState || "";
+    if (hiddenSmsConsent) hiddenSmsConsent.value = savedData.smsConsent ? "Yes" : "No";
+
+    const radioPills = document.querySelectorAll(".radio-pill");
+
+    radioPills.forEach(function (pill) {
+      const radio = pill.querySelector('input[type="radio"]');
+
+      function syncActive() {
+        const groupName = radio.name;
+        document.querySelectorAll(`.radio-pill input[name="${groupName}"]`).forEach(function (item) {
+          item.closest(".radio-pill").classList.remove("active");
+        });
+
+        if (radio.checked) {
+          pill.classList.add("active");
+        }
+      }
+
+      pill.addEventListener("click", function () {
+        radio.checked = true;
+        syncActive();
+      });
+
+      syncActive();
+    });
+
+    quoteDetailsForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const year = document.getElementById("year");
+      const make = document.getElementById("make");
+      const model = document.getElementById("model");
+      const shipDate = document.getElementById("shipDate");
+      const name = document.getElementById("name");
+      const email = document.getElementById("email");
+      const phone = document.getElementById("phone");
+
+      if (!year.value.trim() || !make.value.trim() || !model.value.trim()) {
+        alert("Please complete vehicle year, make, and model.");
+        return;
+      }
+
+      if (!shipDate.value) {
+        alert("Please select your first available shipping date.");
+        return;
+      }
+
+      if (!name.value.trim() || !email.value.trim() || !phone.value.trim()) {
+        alert("Please complete your contact information.");
+        return;
+      }
+
+      alert("Step 2 is ready. Next we can connect real email sending or CRM lead capture.");
     });
   }
 });
