@@ -163,8 +163,8 @@ img {
 .hero {
   padding: 72px 0 84px;
   background:
-    linear-gradient(135deg, rgba(255,255,255,0.86), rgba(236,243,251,0.84)),
-    url("../images/hero-big.jpg") center center / cover no-repeat;
+  linear-gradient(135deg, rgba(255,255,255,0.55), rgba(236,243,251,0.45)),
+  url("../images/hero-big.jpg") center center / cover no-repeat;
 }
 
 .hero-content {
