@@ -86,6 +86,7 @@ img {
 .logo img {
   height: 65px;
   width: auto;
+  display: block;
 }
 
 .menu {
