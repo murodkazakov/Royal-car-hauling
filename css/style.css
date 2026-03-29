@@ -205,10 +205,13 @@ img {
   max-width: 650px;
   margin-bottom: 28px;
 
-  background: rgba(255,255,255,0.65);  /* ← added */
+  background: rgba(255,255,255,0.55);  /* ← added */
   padding: 10px 14px;                  /* ← added */
   border-radius: 10px;                 /* ← added */
   display: inline-block;               /* ← added */
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .hero-buttons {
