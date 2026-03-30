@@ -55,6 +55,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if (fromState) fromState.value = "";
       }
     });
+
+    fromZip.addEventListener("blur", function () {
+      if (fromZip.value.trim().length === 5) {
+        fillCityState(fromZip, fromCity, fromState);
+      }
+    });
   }
 
   if (toZip) {
@@ -66,6 +72,12 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         if (toCity) toCity.value = "";
         if (toState) toState.value = "";
+      }
+    });
+
+    toZip.addEventListener("blur", function () {
+      if (toZip.value.trim().length === 5) {
+        fillCityState(toZip, toCity, toState);
       }
     });
   }
@@ -93,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      if (!data.fromCity || !data.toCity) {
+      if (!data.fromCity || !data.fromState || !data.toCity || !data.toState) {
         alert("Please enter valid ZIP codes so we can load the city and state.");
         return;
       }
@@ -144,12 +156,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     radioPills.forEach(function (pill) {
       const radio = pill.querySelector('input[type="radio"]');
+      if (!radio) return;
 
       function syncActive() {
         const groupName = radio.name;
-        document.querySelectorAll(`.radio-pill input[name="${groupName}"]`).forEach(function (item) {
-          item.closest(".radio-pill").classList.remove("active");
-        });
+
+        document
+          .querySelectorAll(`.radio-pill input[name="${groupName}"]`)
+          .forEach(function (item) {
+            const parent = item.closest(".radio-pill");
+            if (parent) parent.classList.remove("active");
+          });
 
         if (radio.checked) {
           pill.classList.add("active");
@@ -164,27 +181,32 @@ document.addEventListener("DOMContentLoaded", function () {
       syncActive();
     });
 
-    quoteDetailsForm.addEventListener("submit", function () {
-  const year = document.getElementById("year");
-  const make = document.getElementById("make");
-  const model = document.getElementById("model");
-  const shipDate = document.getElementById("shipDate");
-  const name = document.getElementById("name");
-  const email = document.getElementById("email");
-  const phone = document.getElementById("phone");
+    quoteDetailsForm.addEventListener("submit", function (e) {
+      const year = document.getElementById("year");
+      const make = document.getElementById("make");
+      const model = document.getElementById("model");
+      const shipDate = document.getElementById("shipDate");
+      const name = document.getElementById("name");
+      const email = document.getElementById("email");
+      const phone = document.getElementById("phone");
 
-  if (!year.value.trim() || !make.value.trim() || !model.value.trim()) {
-    alert("Please complete vehicle year, make, and model.");
-    return;
-  }
+      if (!year.value.trim() || !make.value.trim() || !model.value.trim()) {
+        e.preventDefault();
+        alert("Please complete vehicle year, make, and model.");
+        return;
+      }
 
-  if (!shipDate.value) {
-    alert("Please select your first available shipping date.");
-    return;
-  }
+      if (!shipDate.value) {
+        e.preventDefault();
+        alert("Please select your first available shipping date.");
+        return;
+      }
 
-  if (!name.value.trim() || !email.value.trim() || !phone.value.trim()) {
-    alert("Please complete your contact information.");
-    return;
+      if (!name.value.trim() || !email.value.trim() || !phone.value.trim()) {
+        e.preventDefault();
+        alert("Please complete your contact information.");
+        return;
+      }
+    });
   }
 });
