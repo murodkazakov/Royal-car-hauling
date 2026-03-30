@@ -164,29 +164,27 @@ document.addEventListener("DOMContentLoaded", function () {
       syncActive();
     });
 
-    quoteDetailsForm.addEventListener("submit", function (e) {
-      
-      const year = document.getElementById("year");
-      const make = document.getElementById("make");
-      const model = document.getElementById("model");
-      const shipDate = document.getElementById("shipDate");
-      const name = document.getElementById("name");
-      const email = document.getElementById("email");
-      const phone = document.getElementById("phone");
+    quoteDetailsForm.addEventListener("submit", function () {
+  const year = document.getElementById("year");
+  const make = document.getElementById("make");
+  const model = document.getElementById("model");
+  const shipDate = document.getElementById("shipDate");
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const phone = document.getElementById("phone");
 
-      if (!year.value.trim() || !make.value.trim() || !model.value.trim()) {
-        alert("Please complete vehicle year, make, and model.");
-        return;
-      }
+  if (!year.value.trim() || !make.value.trim() || !model.value.trim()) {
+    alert("Please complete vehicle year, make, and model.");
+    return;
+  }
 
-      if (!shipDate.value) {
-        alert("Please select your first available shipping date.");
-        return;
-      }
+  if (!shipDate.value) {
+    alert("Please select your first available shipping date.");
+    return;
+  }
 
-      if (!name.value.trim() || !email.value.trim() || !phone.value.trim()) {
-        alert("Please complete your contact information.");
-        return;
-      
+  if (!name.value.trim() || !email.value.trim() || !phone.value.trim()) {
+    alert("Please complete your contact information.");
+    return;
   }
 });
