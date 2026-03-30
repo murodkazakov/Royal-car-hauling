@@ -165,8 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     quoteDetailsForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
+      
       const year = document.getElementById("year");
       const make = document.getElementById("make");
       const model = document.getElementById("model");
@@ -188,9 +187,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!name.value.trim() || !email.value.trim() || !phone.value.trim()) {
         alert("Please complete your contact information.");
         return;
-      }
-
-      alert("Step 2 is ready. Next we can connect real email sending or CRM lead capture.");
-    });
+      
   }
 });
