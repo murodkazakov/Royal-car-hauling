@@ -67,16 +67,16 @@
         <h2>Request a Quote</h2>
         <p class="quote-subtext">Start with your route and continue to step 2.</p>
 
-        <form class="quote-form quote-step-one-form" id="quoteStepOneForm">
+        <form action="https://formspree.io/f/mojpdavq" method="POST" class="quote-form quote-step-one-form" id="quoteStepOneForm">
           <div class="form-row">
             <div class="form-group">
               <label for="from">Pickup ZIP</label>
-              <input id="from" type="text" placeholder="Enter ZIP" maxlength="5">
+              <input id="from" name="pickupZip" type="text" placeholder="Enter ZIP" maxlength="5">
             </div>
 
             <div class="form-group">
               <label for="to">Delivery ZIP</label>
-              <input id="to" type="text" placeholder="Enter ZIP" maxlength="5">
+              <input id="to" name="deliveryZip" type="text" placeholder="Enter ZIP" maxlength="5">
             </div>
           </div>
 
@@ -100,13 +100,13 @@
 
             <div class="form-group">
               <label for="toState">Delivery State</label>
-              <input id="toState" type="text" placeholder="State" readonly>
+              <input id="toState" name="deliveryState" type="text" placeholder="State" readonly>
             </div>
           </div>
 
           <div class="consent-box">
             <label class="consent-label">
-              <input type="checkbox" id="smsConsent">
+              <input type="checkbox" id="smsConsent" name="smsConsent">
               <span>
                 I agree to receive communications by text message regarding vehicle shipping from Royal Car Hauling LLC.
                 You may opt-out by replying STOP or ask for more information by replying HELP.
