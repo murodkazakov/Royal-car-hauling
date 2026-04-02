@@ -199,12 +199,13 @@ img {
 }
 
 .hero-text h1 {
-    font-size: 74px;
+    font-size: 66px;
     line-height: 1.05;
     margin-bottom: 18px;
     color: #102236;
     max-width: 650px;
     font-weight: 800;
+  letter-spacing: -1px;
 }
 
 .hero-description {
