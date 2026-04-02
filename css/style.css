@@ -199,10 +199,11 @@ img {
 }
 
 .hero-text h1 {
-  font-size: 60px;
-  line-height: 1.08;
-  margin-bottom: 18px;
-  color: #102236;
+    font-size: 60px;
+    line-height: 1.08;
+    margin-bottom: 18px;
+    color: #102236;
+    max-width: 500px;
 }
 
 .hero-description {
