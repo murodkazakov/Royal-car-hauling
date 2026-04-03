@@ -890,11 +890,15 @@ img {
     line-height: 1.7;
     margin-bottom: 16px;
 }
-.cta-band::before,
-.cta-band::after {
-    pointer-events: none;
+.cta-band-content {
+  position: relative;
 }
 
-.cta-band * {
-    pointer-events: auto;
+.cta-band-buttons {
+  position: relative;
+  z-index: 10;
+}
+
+.cta-band-buttons a {
+  cursor: pointer;
 }
