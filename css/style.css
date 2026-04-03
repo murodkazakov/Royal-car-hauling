@@ -890,17 +890,3 @@ img {
     line-height: 1.7;
     margin-bottom: 16px;
 }
-.cta-band {
-  position: relative;
-  isolation: isolate;
-}
-
-.cta-band-content {
-  position: relative;
-  z-index: 2;
-}
-
-.cta-band-buttons {
-  position: relative;
-  z-index: 50;
-}
