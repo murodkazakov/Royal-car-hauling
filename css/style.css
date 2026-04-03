@@ -890,3 +890,84 @@ img {
     line-height: 1.7;
     margin-bottom: 16px;
 }
+.reviews-platforms {
+    padding: 70px 0;
+    background: #f8fafc;
+}
+
+.reviews-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.reviews-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.reviews-header p {
+    font-size: 1rem;
+    color: #6b7280;
+    margin: 0;
+}
+
+.reviews-platforms-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+}
+
+.review-platform-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 22px 18px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+}
+
+.review-platform-card img {
+    max-width: 150px;
+    max-height: 38px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.review-platform-card span {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #475569;
+}
+
+@media (max-width: 1100px) {
+    .reviews-platforms-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .reviews-platforms-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .reviews-header h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-platforms-grid {
+        grid-template-columns: 1fr;
+    }
+}
